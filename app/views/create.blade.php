@@ -3,7 +3,8 @@
 {{Form::open(['url'=>'employee'])}}
 <div>
     {{Form::label('Name')}}
-    {{Form::text('name')}}
+    {{Form::text('name', Input::old('name'))}}
+    {{$errors->first('name')}}
 </div>
 <div>
     {{Form::label('Surname')}}
