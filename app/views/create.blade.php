@@ -1,0 +1,32 @@
+@extends('layouts.default')
+@section('content')
+{{Form::open(['url'=>'employee'])}}
+<div>
+    {{Form::label('Name')}}
+    {{Form::text('name')}}
+</div>
+<div>
+    {{Form::label('Surname')}}
+    {{Form::text('surname')}}
+</div>
+<div>
+    {{Form::label('Email')}}
+    {{Form::text('email')}}
+</div>
+<div>
+    {{Form::label('Age')}}
+    {{Form::text('age')}}
+</div>
+<div>
+    {{Form::label('Gender')}}
+    {{Form::text('gender')}}
+</div>
+<div>
+    {{Form::label('Exp')}}
+    {{Form::text('exp')}}
+</div>
+<div>
+    {{Form::submit('Create')}}
+</div>
+{{Form::close()}}
+@stop
