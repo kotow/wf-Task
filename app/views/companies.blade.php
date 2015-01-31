@@ -6,6 +6,7 @@
     <tr>
         <td><a href="../company/{{$company->id}}">{{ $company->name }}</a></td>
     </tr>
+
     @endforeach
 </table>
 <a href="../company/create">Create</a>
