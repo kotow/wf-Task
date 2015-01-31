@@ -10,7 +10,11 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::resource('/employee', 'EmployeeController');/*
+Route::resource('/employee', 'EmployeeController');
+Route::get('/employee/{id}/addcompany', 'EmployeeController@addcomp');
+Route::post('/employee/{id}/addcompany', 'EmployeeController@addcompany');
+Route::post('/employee/search', 'EmployeeController@search');
+Route::resource('/company', 'CompanyController');/*
 Route::get('/employees/', 'HomeController@showEmployees');
 Route::get('/employees/{id?}/view', 'HomeController@showEmployees', 'id');
 Route::get('/employees/create', 'HomeController@showEmployees');

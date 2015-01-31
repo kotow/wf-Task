@@ -1,10 +1,14 @@
 @extends('layouts.default')
 @section('content')
 <h1>Employees</h1>
+{{Form::open(["url"=>"employee/search"])}}
+{{Form::text('search')}}
+{{Form::submit('Search')}}
+{{Form::close()}}
 <table>
-@foreach ($results as $user)
+@foreach ($employees as $employee)
 <tr>
-    <td><a href="employee/{{$user->id}}">{{ $user->name }} {{ $user->surname }}</a></td>
+    <td><a href="employee/{{$employee->id}}">{{ $employee->name }} {{ $employee->surname }}</a></td>
     <td><a href="">View</a></td>
     <td><a href="">Delete</a></td>
 </tr>

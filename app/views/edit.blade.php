@@ -1,38 +1,38 @@
 @extends('layouts.default')
 @section('content')
-{{Form::open(['url'=>'employee'])}}
+{{Form::open(['url'=>'employee/'.$employee->id, 'method'=>'PUT'])}}
 <div>
     {{Form::label('Name')}}
-    {{Form::text('name', Input::old('name'))}}
+    {{Form::text('name', $employee->name)}}
     {{$errors->first('name')}}
 </div>
 <div>
     {{Form::label('Surname')}}
-    {{Form::text('surname', Input::old('surname'))}}
+    {{Form::text('surname', $employee->surname)}}
     {{$errors->first('surname')}}
 </div>
 <div>
     {{Form::label('Email')}}
-    {{Form::text('email', Input::old('email'))}}
+    {{Form::text('email', $employee->email)}}
     {{$errors->first('email')}}
 </div>
 <div>
     {{Form::label('Age')}}
-    {{Form::text('age', Input::old('age'))}}
+    {{Form::text('age', $employee->age)}}
     {{$errors->first('age')}}
 </div>
 <div>
     {{Form::label('Gender')}}
-    {{Form::text('gender', Input::old('gender'))}}
+    {{Form::text('gender', $employee->gender)}}
     {{$errors->first('gender')}}
 </div>
 <div>
     {{Form::label('Exp')}}
-    {{Form::text('exp', Input::old('exp'))}}
+    {{Form::text('exp', $employee->experience)}}
     {{$errors->first('exp')}}
 </div>
 <div>
-    {{Form::submit('Create')}}
+    {{Form::submit('Edit')}}
 </div>
 {{Form::close()}}
 @stop
