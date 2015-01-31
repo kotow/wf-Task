@@ -8,9 +8,7 @@
 <table>
 @foreach ($employees as $employee)
 <tr>
-    <td><a href="employee/{{$employee->id}}">{{ $employee->name }} {{ $employee->surname }}</a></td>
-    <td><a href="">View</a></td>
-    <td><a href="">Delete</a></td>
+    <td><a href="../employee/{{$employee->id}}">{{ $employee->name }} {{ $employee->surname }}</a></td>
 </tr>
 @endforeach
 </table>

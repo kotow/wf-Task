@@ -34,6 +34,7 @@ class Employee {
 
     public function delete($id){
         DB::delete('DELETE FROM `employee` WHERE `id` = '.$id);
+        DB::delete('DELETE FROM `companies-employees` WHERE `employee_id` = '.$id);
     }
 
     public  function validate($data){

@@ -1,16 +1,15 @@
 @extends('layouts.default')
 @section('content')
 <h1>{{ $employee->name }} {{ $employee->surname }}</h1>
-<table>
-    <tr>
-        <td>{{ $employee->email }} {{ $employee->age }}</td>
-        <td></td>
-    </tr>
-</table>
-Companies
+Email: {{ $employee->email }}<br>
+Age: {{ $employee->age }}<br>
+Gender: {{$employee->gender}}<br>
+Experience: {{$employee->experience}} years <br>
+Companies:<hr>
 @foreach ($companies as $company)
-{{$company->name}}
+{{$company->name}}<br>
 @endforeach
+<hr>
 {{Form::open(["url"=>"/employee/$employee->id", "method"=>"delete"])}}
 {{Form::submit('delete')}}
 {{Form::close()}}
