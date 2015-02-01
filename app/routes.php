@@ -15,8 +15,8 @@ Route::get('/employee/{id}/addcompany', 'EmployeeController@addcomp');
 Route::post('/employee/{id}/addcompany', 'EmployeeController@addcompany');
 Route::post('/employee/search', 'EmployeeController@search');
 Route::resource('/company', 'CompanyController');
-Route::get('/employee/{id}/addemployee', 'EmployeeController@addcomp');
-Route::post('/employee/{id}/addemployee', 'EmployeeController@addcompany');
+Route::get('/company/{id}/addemployee', 'CompanyController@addcomp');
+Route::post('/company/{id}/addemployee', 'CompanyController@addcompany');
 Route::post('/company/search', 'CompanyController@search');/*
 Route::get('/employees/', 'HomeController@showEmployees');
 Route::get('/employees/{id?}/view', 'HomeController@showEmployees', 'id');

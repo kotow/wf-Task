@@ -13,7 +13,10 @@ class Company {
     }
 
     public function getById($id){
-        return DB::select('select * from companies WHERE id='.$id);
+        $employees=DB::select('SELECT * FROM `companies-employees` JOIN `employee`
+        ON `companies-employees`.`employee_id`=`employee`.`id` AND `companies-employees`.`company_id`='.$id );
+        $company=DB::select('select * from `companies` WHERE id='.$id);
+        return array($employees,$company);
     }
 
     public  function create($data){
@@ -24,7 +27,7 @@ class Company {
 
     public function edit($data, $id){
         DB::update('UPDATE `companies` SET `name`=?, `vat`=?, `description`=?, `email`=?, `country`=?, `state`=?, `city`=?, `address`=? WHERE `id` = '.$id,
-        [htmlentities($data['name']),$data['vat'],$data['description'],$data['email'],$data['country'],$data['state'],$data['city'],$data['address']]);
+        [$data['name'],$data['vat'],$data['description'],$data['email'],$data['country'],$data['state'],$data['city'],$data['address']]);
     }
 
     public function delete($id){
