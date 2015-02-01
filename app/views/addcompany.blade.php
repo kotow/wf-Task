@@ -1,9 +1,9 @@
 @extends('layouts.default')
 @section('content')
 {{Form::open(['url'=>'employee/'.$id.'/addcompany'])}}
-<select type="multiple" name="company">
+<select multiple="multiple" name="company[]">
     @foreach ($companies as $company)
-    <option value="{{$company->id}}">{{$company->name}}</option>
+    <option value="{{{$company->id}}}">{{{$company->name}}}{{{$company->id}}}</option>
     @endforeach
 </select>
 {{Form::submit('Add')}}

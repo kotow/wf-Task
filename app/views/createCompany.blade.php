@@ -9,7 +9,7 @@
 <div>
     {{Form::label('Description')}}
     {{Form::text('description', Input::old('description'))}}
-    {{$errors->first('surname')}}
+    {{$errors->first('description')}}
 </div>
 <div>
     {{Form::label('VAT')}}
@@ -19,27 +19,27 @@
 <div>
     {{Form::label('Email')}}
     {{Form::text('email', Input::old('email'))}}
-    {{$errors->first('age')}}
+    {{$errors->first('email')}}
 </div>
 <div>
     {{Form::label('Country')}}
     {{Form::text('country', Input::old('country'))}}
-    {{$errors->first('gender')}}
+    {{$errors->first('country')}}
 </div>
 <div>
     {{Form::label('State')}}
     {{Form::text('state', Input::old('state'))}}
-    {{$errors->first('exp')}}
+    {{$errors->first('state')}}
 </div>
 <div>
     {{Form::label('City')}}
     {{Form::text('city', Input::old('city'))}}
-    {{$errors->first('exp')}}
+    {{$errors->first('city')}}
 </div>
 <div>
     {{Form::label('Address')}}
     {{Form::text('address', Input::old('address'))}}
-    {{$errors->first('exp')}}
+    {{$errors->first('address')}}
 </div>
 <div>
     {{Form::submit('Create')}}

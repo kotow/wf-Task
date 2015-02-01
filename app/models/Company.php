@@ -24,7 +24,7 @@ class Company {
 
     public function edit($data, $id){
         DB::update('UPDATE `companies` SET `name`=?, `vat`=?, `description`=?, `email`=?, `country`=?, `state`=?, `city`=?, `address`=? WHERE `id` = '.$id,
-        [$data['name'],$data['vat'],$data['description'],$data['email'],$data['country'],$data['state'],$data['city'],$data['address']]);
+        [htmlentities($data['name']),$data['vat'],$data['description'],$data['email'],$data['country'],$data['state'],$data['city'],$data['address']]);
     }
 
     public function delete($id){
@@ -33,8 +33,13 @@ class Company {
 
     public  function validate($data){
         $rules = ["name" => array("required"),
+            "description" => "required|min:10|max:100",
+            "country" => "required|min:5|max:20",
+            "state" => "required|min:5|max:20",
+            "city" => "required|min:3|max:20",
+            "address" => "required|min:10|max:100",
             "email" => array("required", "email"),
-            "vat" => array("required", "regex:/[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][A-Z][0-2]/")];
+            "vat" => array("required", "regex:/([A-Z]{3}[0-9]{4}[^a-z^A-Z^0-9]{1}[A-Z]{1}[0-2]{1})|([A-Z]{3}[0-9]{5}[A-Z]{1}[0-2]{1})+$/")];
         $validator = Validator::make($data, $rules);
         return $validator;
     }
